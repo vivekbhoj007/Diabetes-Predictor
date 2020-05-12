@@ -1,0 +1,13 @@
+body {
+    background-color : rgb(5, 105, 105);
+}
+
+h1 {
+    color: whitesmoke ;
+    margin-left: 20px;
+}
+
+p {
+    color: whitesmoke;
+    margin-top: 20px;
+}

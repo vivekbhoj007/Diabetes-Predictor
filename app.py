@@ -29,7 +29,8 @@ def predict():
     # output = np.round(prediction[0],2)
     
     int_features = [int(x) for x in request.form.values()]
-    int_features = int_features().reshape(1,1)
+    # print(int_features,"feaaaaaaaaaaaaaaaaaaaaaa")
+    # int_features = int_features.reshape(1,1)
     final_features = [np.array(int_features)]
     prediction = model.predict(final_features)
 
@@ -37,9 +38,9 @@ def predict():
 
 
     if output == 1 :
-        return render_template('diabetes.html', prediction_text = 'Your diabetes test is postivie {}'.format(output))
+        return render_template('diabetes.html', prediction_text = 'Your diabetes test is postivie'.format(output))
     else:
-        return render_template('diabetes.html', prediction_text = 'Your diabetes test is negative {}'.format(output))
+        return render_template('diabetes.html', prediction_text = 'Your diabetes test is negative'.format(output))
 
 # app.run()
 

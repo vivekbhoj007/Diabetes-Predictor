@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Daibetes Webapp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+<div class="container"><br>
+  <center><h1>Daibetes Predictor</h1>
+    <p>Enter the required fields and checks your Daibetes status</p> 
+  </center>
+</div>
+
+<br>
+
+<div class="container">  
+  <div class="row">
+     <div class="col-sm-4">
+    <!--  <h3>Column 1</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p> -->
+    </div> 
+        <div class="col-sm-4 text-center">
+            <form action="{{ url_for ('predict')}}" method="POST">
+            <!-- <form action='/predict' methods="post"> -->            
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter no. of pregnencies" name='pregnencies'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter glucose count" name='glucose'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter insulin count" name='insulin'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter BMI count" name='BMI'>
+                </div><br>
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter the Age" name='Age'>
+                </div><br>
+                <button class="btn btn-success" type="submit">
+                  <span class="glyphicon glyphicon-search">Check Status</span>  
+                </button>
+            </form>
+            <br>
+            {{prediction_text}}
+        </div>
+    <div class="col-sm-4">
+      <!-- 
+      <h3>Column 3</h3>        
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>-->
+    </div> 
+  </div>
+</div>
+
+</body>
+</html>
